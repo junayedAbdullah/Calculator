@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculater</title>
+    <style>
+        section{
+            height: 650px;
+            width: 400px;
+            background-color: rgba(25, 21, 31, 0.993);
+            position: relative;
+            left:350px ;
+            border: 4px rgba(121, 117, 117, 0.993) solid;
+            border-radius: 10px;
+            box-shadow: 5px 5px 2px rgb(39, 36, 36);
+        }
+        #input{
+            width: 400px;
+            box-sizing: border-box;
+            height: 200px;
+            font-size: 50px;
+            position: absolute;
+            top: 0px;
+            float: right;
+            text-align: right;
+            border: 5px rgb(107, 59, 221) solid;
+            border-radius: 5px;
+        }
+        #input:focus{
+            border: 5px rgb(107, 59, 221) solid;  
+        }
+        .button{
+            background-color: brown;
+            height: 100px;
+            width:100px ;
+            font-size: 2rem;
+            border: 2px blue solid;
+            border-radius: 5px;
+        }
+        .button:hover{
+            opacity: 80%;
+        }
+        .button:focus{
+            border: rgb(151, 31, 105) 2px solid;
+            background-color: rgba(211, 108, 108, 0.973);
+        }
+        #g{
+            position: absolute;
+            top: 250px;
+        }
+        #h{
+            position: absolute;
+            top: 250px;
+            left: 100px;
+        }
+        #i{
+            position: absolute;
+            top: 250px;
+            left: 200px;
+        }
+        #d{
+            position: absolute;
+            top: 350px;
+        }
+        #e{
+            position: absolute;
+            top: 350px;
+            left: 100px;
+        }
+        #f{
+            position: absolute;
+            top: 350px;
+            left: 200px;
+        }
+        #a{
+            position: absolute;
+            top: 450px;
+        }
+        #b{
+            position: absolute;
+            top: 450px;
+            left: 100px;
+        }
+        #c{
+            position: absolute;
+            top: 450px;
+            left: 200px;
+        }
+        #j{
+            position: absolute;
+            top: 550px;
+            left: 00px;
+            width:200px;
+        }
+        #k{
+            position: absolute;
+            top: 550px;
+            left: 200px;   
+        
+        }
+        .btn{
+            height: 50px;
+            width: 100px;
+            background-color: rgb(173, 165, 165);
+            border: 2px rgb(219, 88, 88) solid;
+            border-radius:30px ;
+        }
+       #l{
+        position: absolute;
+        top: 200px;
+       }
+       #m{
+        position: absolute;
+        top: 200px;
+        left: 100px;
+       }
+       #n{
+        position: absolute;
+        top: 200px;
+        left: 200px;
+       }
+       .btn:hover{
+        opacity: 80%;
+       }
+       .btn:focus{
+        background-color: blue;
+       }
+       .b{
+            background-color: rgb(207, 226, 30);
+            height: 100px;
+            width: 100px;
+            font-size: 2rem;
+            border: 4px rgb(47, 47, 48) solid;
+            border-radius: 8px;
+       }
+       .b:hover{
+        opacity: 80%;
+       }
+       .b:focus{
+        background-color: ghostwhite;
+        border: 4px rgb(7, 7, 7) solid;
+       }
+       #o{
+        position: absolute;
+        top: 200px;
+        left: 300px;
+       }
+       #p{
+        position: absolute;
+        top: 300px;
+        left: 300px;
+       }
+       #q{
+        position: absolute;
+        top: 400px;
+        left: 300px;
+       }
+       #r{
+        position: absolute;
+        top: 500px;
+        left: 300px;
+       }
+       #s{
+        position: absolute;
+        top: 600px;
+        left: 300px;
+        height: 50px;
+       }
+    </style>
+</head>
+<body>
+<section>
+    <div>
+   <input type="text" id="input">
+    </div>
+    <div>
+        
+        <input type="button" value="1"  class="button" id="a">
+        <input type="button" value="2"  class="button" id="b">
+        <input type="button" value="3"  class="button" id="c">
+        <input type="button" value="4"  class="button" id="d">
+        <input type="button" value="5"  class="button" id="e">
+        <input type="button" value="6"  class="button" id="f">
+        <input type="button" value="7"  class="button" id="g">
+        <input type="button" value="8"  class="button" id="h">
+        <input type="button" value="9"  class="button" id="i">
+        <input type="button" value="0"  class="button" id="j">
+        <input type="button" value="."  class="button" id="k">
+        <input type="button" value="AC"  id="l" class="btn">
+        <input type="button" value="+/-" id="m" class="btn">
+        <input type="button" value="%"   id="n" class="btn">
+        <input type="button" value="/"  class="b" id="o">
+        <input type="button" value="X"  class="b" id="p">
+        <input type="button" value="-"  class="b" id="q">
+        <input type="button" value="+"  class="b" id="r">
+        <input type="button" value="="   id="s">
+        <script>
+            function appendNumber(number) {
+              document.getElementById("result").value += number;
+            }
+        
+            function appendOperator(operator) {
+              document.getElementById("result").value += operator;
+            }
+        
+            function calculate() {
+              let result = document.getElementById("result").value;
+              try {
+                let output = eval(result);
+                document.getElementById("result").value = output;
+              } catch (error) {
+                document.getElementById("result").value = "Error";
+              }
+            }
+        
+            function clearResult() {
+              document.getElementById("result").value = "";
+            }
+          </script>
+    </div>
+</section>
+</body>
+</html>
