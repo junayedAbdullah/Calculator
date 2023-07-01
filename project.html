@@ -166,6 +166,7 @@
         top: 600px;
         left: 300px;
         height: 50px;
+        width: 100px;
        }
     </style>
 </head>
@@ -195,29 +196,6 @@
         <input type="button" value="-"  class="b" id="q">
         <input type="button" value="+"  class="b" id="r">
         <input type="button" value="="   id="s">
-        <script>
-            function appendNumber(number) {
-              document.getElementById("result").value += number;
-            }
-        
-            function appendOperator(operator) {
-              document.getElementById("result").value += operator;
-            }
-        
-            function calculate() {
-              let result = document.getElementById("result").value;
-              try {
-                let output = eval(result);
-                document.getElementById("result").value = output;
-              } catch (error) {
-                document.getElementById("result").value = "Error";
-              }
-            }
-        
-            function clearResult() {
-              document.getElementById("result").value = "";
-            }
-          </script>
     </div>
 </section>
 </body>
